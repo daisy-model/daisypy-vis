@@ -1,0 +1,12 @@
+dlf-0.0 -- Soil chemical (defined in 'log-std.dai').
+
+VERSION: 6.41
+LOGFILE: Soil-Tracer.dlf
+RUN: Mon Aug 28 13:39:41 2023
+
+COLUMN: *
+CHEMICAL: Tracer
+INTERVAL: box none
+
+LOG: Content, transport and transformation of chemicals in the soil.
+
