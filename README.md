@@ -3,6 +3,13 @@ Visualisation library and tools for Daisy model output
 
 See `doc/' for examples.
 
+## Installation
+On linux
+
+	git clone git@github.com:daisy-model/daisy-vis.git
+	cd daisy-vis
+	pip install .
+
 ## Testing
 
     pytest
