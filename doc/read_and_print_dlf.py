@@ -6,8 +6,8 @@ def main():
     dirname = os.path.dirname(os.path.realpath(sys.argv[0]))
     path = os.path.join(dirname, 'example-data', 'DailyP-Daily-WaterFlux.dlf')
     soil_tracer = dlf.read_dlf(path)
-    for row in soil_tracer.header:
-        print(row)
+    for k,v in soil_tracer.header.items():
+        print(f'{k} : {v}')
     print('--------------------')
     for col, unit in soil_tracer.units.items():
         print(f'{col} : {unit}')

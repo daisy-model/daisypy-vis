@@ -9,7 +9,7 @@ __all__ = [
 
 Dlf = namedtuple('Dlf', ['header', 'units', 'body'])
 Dlf.__doc__ += ': Daisy model output log'
-Dlf.header.__doc__ = 'Information describing log'
+Dlf.header.__doc__ = 'dict with information describing log'
 Dlf.units.__doc__ = 'dict mapping value names to units'
 Dlf.body.__doc__ = 'pandas.DataFrame containing the logged values'
 
@@ -25,16 +25,21 @@ def read_dlf(path):
     -------
     Dlf object
     '''
-    # TODO: Parse header and return a dict
     header_body_sep = '--------------------'
     with open(path, encoding='utf-8') as infile:
-        header = []
+        header = {}
         for row in infile:
             if row.startswith(header_body_sep):
                 break
             row = row.strip()
             if len(row) > 0:
-                header.append(row)
+                if row[:3] == 'dlf':
+                    header['info'] = row
+                else:
+                    sep_idx = row.find(':')
+                    k = row[:sep_idx].strip()
+                    v = row[(sep_idx+1):].strip()
+                    header[k] = v
         try:
             csv_header = next(infile).strip('\n').split('\t')
             units = dict(zip(csv_header, next(infile).strip('\n').split('\t')))
