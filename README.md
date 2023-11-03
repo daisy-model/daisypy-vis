@@ -1,3 +1,6 @@
+[![pytest](https://github.com/daisy-model/daisy-vis/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/daisy-model/daisy-vis/actions/workflows/pytest.yml)
+[![Pylint](https://github.com/daisy-model/daisy-vis/actions/workflows/pylint.yml/badge.svg)](https://github.com/daisy-model/daisy-vis/actions/workflows/pylint.yml)
+
 # daisy-vis
 Visualisation library and tools for Daisy model output
 
