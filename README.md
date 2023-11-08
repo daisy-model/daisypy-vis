@@ -4,7 +4,7 @@
 # daisy-vis
 Visualisation library and tools for Daisy model output
 
-See `doc/' for examples.
+See [doc](doc) for examples.
 
 ## Installation
 On linux
