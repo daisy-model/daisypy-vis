@@ -2,7 +2,7 @@ import pytest
 
 @pytest.fixture
 def dlf_path():
-    return 'test-data/DailyP-Daily-WaterFlux.dlf'
+    return 'test-data/daily/DailyP/DailyP-Daily-WaterFlux.dlf'
 
 @pytest.fixture
 def only_header_path():
