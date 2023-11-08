@@ -1,8 +1,14 @@
+'''Read a dlf file and print
+info
+header
+body
+'''
 import os
 import sys
 from daisy_vis.io import dlf
 
 def main():
+    '''Run as `python <path-to-file>`'''
     dirname = os.path.dirname(os.path.realpath(sys.argv[0]))
     path = os.path.join(dirname, 'example-data', 'DailyP-Daily-WaterFlux.dlf')
     soil_tracer = dlf.read_dlf(path)
