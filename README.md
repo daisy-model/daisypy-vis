@@ -14,6 +14,11 @@ On linux
 	pip install .
 
 ## Testing
+To install test dependencies
+
+    pip install -e .[test]
+
+To run tests
 
     pytest
 
@@ -21,12 +26,16 @@ On linux
 Install package as editable
 
     pip install -e .
-	
+
 ### pylint
 Use `pyproject.toml` for package-wide settings, e.g. `ignore-trailing-whitespace`.
 
 	pylint daisy_vis
-	
 
-	
 
+### Tests
+Use pytest-mpl to compare images. Generate baselines images by running
+
+    pytest --mpl-generate-path=test-data/baseline
+
+and inspect the output...

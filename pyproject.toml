@@ -10,3 +10,12 @@ disable = [
 	'trailing-whitespace',
         'trailing-newlines',
         ]
+
+[tool.pytest.ini_options]
+testpaths = [ "daisy_vis" ]
+addopts = [
+        "--mpl", 
+        "--mpl-baseline-path=test-data/baseline",
+        # Uncomment the line below to generate test images.
+        #"--mpl-generate-path=test-data/baseline",
+        ]
