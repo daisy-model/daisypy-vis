@@ -61,9 +61,16 @@ def bar(x_var, y_vars, dlfs, *,
     cols = math.ceil(len(y_vars) / rows)
     if figsize is None:
         figsize = cols*6, rows*5
-    fig, axs = plt.subplots(rows, cols, figsize=figsize, sharex=sharex, sharey=sharey)
+    fig, axs = plt.subplots(
+        rows,
+        cols,
+        figsize=figsize,
+        sharex=sharex,
+        sharey=sharey,
+        squeeze=False
+    )
     for n, y_var in enumerate(y_vars):
-        single_var_bar(x_var, y_var, dlfs, dlf_names=dlf_names, ax=axs[n//cols,n%cols])
+        single_var_bar(x_var, y_var, dlfs, axs[n//cols,n%cols], dlf_names=dlf_names)
     if title is not None:
         plt.suptitle(title)
     if not sharex:
@@ -71,7 +78,7 @@ def bar(x_var, y_vars, dlfs, *,
     return fig, axs
 
 
-def single_var_bar(x_var, y_var, dlfs, *, dlf_names=None, ax=None):
+def single_var_bar(x_var, y_var, dlfs, ax, *, dlf_names=None):
     '''Bar plot of a single dlf variable
 
     In the following let Dlf = daisy_vis.io.dlf.Dlf
@@ -87,14 +94,14 @@ def single_var_bar(x_var, y_var, dlfs, *, dlf_names=None, ax=None):
     dlfs : Dlf OR sequence of Dlf or dict of Dlf
       Dlf object containing the data to plot
 
+    ax : matplotlib.axes.Axes
+      axes to plot to. If None a new figure with a single axes is created.
+
     dlf_names : sequence of str
       Names of the dlfs to display in the plot legend.
       If not None then len(dlf_names) == len(dlf).
       Ignored if dlfs is a dict.
 
-    ax : matplotlib.axes.Axes
-      axes to plot to. If None a new figure with a single axes is created.
-    
     Returns
     -------
     ax : matplotlib.axes.Axes
@@ -116,8 +123,6 @@ def single_var_bar(x_var, y_var, dlfs, *, dlf_names=None, ax=None):
         else:
             dlfs = dict(enumerate(dlfs, start=1))
 
-    if ax is None:
-        _, ax = plt.subplots()
     df = None
     unit = None
     for name, (_,units,body) in dlfs.items():
