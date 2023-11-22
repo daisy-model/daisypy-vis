@@ -53,7 +53,7 @@ def bar(x_var, y_vars, dlfs, *,
     Returns
     -------
     fig : matplotlib.figure.Figure
-    ax : matplotlib.axes.Axes or numpy.ndarray of matplotlib.axes.Axes
+    axs : matplotlib.axes.Axes or numpy.ndarray of matplotlib.axes.Axes
     '''
     if isinstance(y_vars, str):
         y_vars = [y_vars]
