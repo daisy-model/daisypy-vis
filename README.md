@@ -15,7 +15,7 @@ On linux
 	pip install .
 
 ## Testing
-To install test dependencies
+See `pyproject.toml`for configuration. To install test dependencies
 
     pip install -e .[test]
 
@@ -32,6 +32,16 @@ If no baseline images are available for a specific version, you can generate wit
     pytest --mpl-generate-path=test-data/baseline/matplotlib-<matplotlib-version-number>
     
 and compare manually.
+
+### Coverage
+See `pyproject.toml`for configuration. To generate coverage report
+
+    pip install coverage
+    coverage run
+    
+To inspect coverage report
+
+    coverage report
 
 ## Development
 Install package as editable
