@@ -15,7 +15,7 @@ disable = [
 testpaths = [ "daisy_vis" ]
 addopts = [
         "--mpl", 
-        "--mpl-baseline-path=test-data/baseline",
-        # Uncomment the line below to generate test images.
-        #"--mpl-generate-path=test-data/baseline",
+        "--mpl-baseline-path=test-data/baseline/matplotlib-3.8.2",
+        # Uncomment the line below and add matplotlib version to generate test images.
+        #"--mpl-generate-path=test-data/baseline/matplotlib-3.8.2"
         ]
