@@ -16,6 +16,7 @@ testpaths = [ "daisy_vis" ]
 addopts = [
         "--mpl", 
         "--mpl-baseline-path=test-data/baseline/matplotlib-3.8.2",
+        "--mpl-results-path=test-data/results"
         # Uncomment the line below and add matplotlib version to generate test images.
         #"--mpl-generate-path=test-data/baseline/matplotlib-3.8.2"
         ]
