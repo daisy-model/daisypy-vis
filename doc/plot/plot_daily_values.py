@@ -11,24 +11,26 @@ from daisy_vis.plot import plot_daily
 def main():
     '''Run as `python <path-to-file>`'''
     dirname = os.path.dirname(os.path.realpath(sys.argv[0]))
-    datadir = os.path.join(dirname, '..', '..', 'test-data', 'daily')
+    datadir = os.path.join(dirname, '..', '..', 'test-data', 'hourly')
     
-    daily_water_flux(datadir)
+    daily_soil_chemical(datadir)
 
-def daily_water_flux(datadir):
-    '''Scatter plot of daily water flux at q in {0, -51, -100, -200}
-    for a single scenario
+def daily_soil_chemical(datadir):
+    '''Scatter plot of daily soil chemical for a single scenario
     '''
+    hour = 12
     dlfs = {
-        'DailyP' : dlf.read_dlf(os.path.join(datadir, 'DailyP/DailyP-Daily-WaterFlux.dlf'))
+        'P2D' : dlf.read_dlf(os.path.join(datadir, 'P2D-Daily-Soil Chemical_110cm.dlf'))
     }
     variables = [
-        'q @ 0',
-        'q @ -51',
-        'q @ -100',
-        'q @ -200',
+        'Leak-Matrix',
+        'Leak-Biopores',
+        'Uptake',
+        'Transform'
     ]
-    plot_daily(dlfs, variables, title='Daily Water Flux')
+    plot_daily(dlfs, variables, hour=hour, title=f'Soil chemical @ hour {hour}', plot_line=True)
+    hour = 0
+    plot_daily(dlfs, variables, hour=hour, title=f'Soil chemical @ hour {hour}')
     plt.show()    
 
 if __name__ == '__main__':

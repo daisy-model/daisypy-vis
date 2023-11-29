@@ -7,6 +7,8 @@ __all__ = [
     'plot_daily',
 ]
 
+COL_NAME_FOR_PLOT = 'daily-plot-date'
+
 def plot_daily(dlfs, variables, *,
                hour=0,
                dlf_names=None,
@@ -58,7 +60,7 @@ def plot_daily(dlfs, variables, *,
     else:
         dlfs = [prepare_dlf(dlf_, hour) for dlf_ in dlfs]
     linestyles = ['-'] if plot_line else None
-    fig, axs = points_and_lines('date', variables, dlfs,
+    fig, axs = points_and_lines(COL_NAME_FOR_PLOT, variables, dlfs,
                                 dlf_names=dlf_names,
                                 figsize=figsize,
                                 title=title,
@@ -86,7 +88,9 @@ def prepare_dlf(dlf_, hour):
                             month=int(series['month']),
                             day=int(series['mday']),
                             hour=hour)
-    body = dlf_.body[dlf_.body['hour'] == hour]
-    body['date'] = body.apply(make_timestamp, axis=1)
-    body = body.sort_values(by='date')
+    # We need to ensure that we are working on a copy of the data and not on a view. Otherwise we
+    # might end up changing the original data, and we dont want that,
+    body = dlf_.body[dlf_.body['hour'] == hour].copy()
+    body[COL_NAME_FOR_PLOT] = body.apply(make_timestamp, axis=1)
+    body = body.sort_values(by=COL_NAME_FOR_PLOT)
     return dlf.Dlf(dlf_.header, dlf_.units, body)
