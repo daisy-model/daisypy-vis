@@ -15,13 +15,33 @@ On linux
 	pip install .
 
 ## Testing
-To install test dependencies
+See `pyproject.toml`for configuration. To install test dependencies
 
     pip install -e .[test]
 
 To run tests
 
     pytest
+
+Note that image comparison tests can fail between different version of matplotlib and freetype. You can force test against images generated with a specific version of matplotlib with
+
+    pytest --mpl-baseline-path=test-data/baseline/matplotlib-<matplotlib-version-number>
+    
+If no baseline images are available for a specific version, you can generate with
+
+    pytest --mpl-generate-path=test-data/baseline/matplotlib-<matplotlib-version-number>
+    
+and compare manually.
+
+### Coverage
+See `pyproject.toml`for configuration. To generate coverage report
+
+    pip install coverage
+    coverage run
+    
+To inspect coverage report
+
+    coverage report
 
 ## Development
 Install package as editable
