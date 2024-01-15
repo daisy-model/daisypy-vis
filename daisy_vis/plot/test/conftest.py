@@ -1,9 +1,11 @@
+'''Data for plot tests'''
 import pytest
 import pandas as pd
-from daisy_vis.io.dlf import Dlf, read_dlf
+from daisy_vis.io.dlf import Dlf
 
 @pytest.fixture
 def annual_dlf1():
+    '''A dlf with 4 random variables logged once every year for 10 years'''
     header = {}
     body = pd.DataFrame({
         'year' : list(range(1990, 2000)),
@@ -12,11 +14,12 @@ def annual_dlf1():
         'm3' : [103.62, 111.2, 109.06, 119.22, 102.62, 116.95, 120.63, 107.1, 104.45, 100.36],
         'm4' : [123.91, 124.14, 95.26, 131.78, 53.87, 70.55, 107.52, 119.9, 125.07, 75.8],
     })
-    units = {'m1' : 'mm', 'm2' : 'mm', 'm3' : 'g', 'm4' : 'liter'}
+    units = {'year': '', 'm1' : 'mm', 'm2' : 'mm', 'm3' : 'g', 'm4' : 'liter'}
     return Dlf(header, units, body)
 
 @pytest.fixture
 def annual_dlf2():
+    '''A dlf with 4 random variables logged once every year for 10 years'''
     header = {}
     body = pd.DataFrame({
         'year' : list(range(1990, 2000)),
@@ -25,12 +28,13 @@ def annual_dlf2():
         'm3' : [110.39, 124.53, 106.08, 122.5, 100.11, 113.93, 110.15, 101.6, 110.32, 110.87],
         'm4' : [119.93, 109.28, 74.56, 110.11, 88.26, 77.04, 93.08, 113.95, 98.78, 95.23],
     })
-    units = {'m1' : 'mm', 'm2' : 'mm', 'm3' : 'g', 'm4' : 'liter'}
+    units = {'year' : '', 'm1' : 'mm', 'm2' : 'mm', 'm3' : 'g', 'm4' : 'liter'}
     return Dlf(header, units, body)
 
 
 @pytest.fixture
 def annual_dlf3():
+    '''A dlf with 4 random variables logged once every year for 10 years'''
     header = {}
     body = pd.DataFrame({
         'year' : list(range(1990, 2000)),
@@ -39,12 +43,13 @@ def annual_dlf3():
         'm3' : [110.62, 121.71, 116.68, 107.99, 117.37, 108.62, 115.48, 105.76, 115.81, 105.17],
         'm4' : [128.91, 62.31, 97.32, 103.31, 123.09, 90.9, 75.74, 143.52, 77.54, 103.4],
     })
-    units = {'m1' : 'mm', 'm2' : 'mm', 'm3' : 'g', 'm4' : 'liter'}
+    units = {'year' : '', 'm1' : 'mm', 'm2' : 'mm', 'm3' : 'g', 'm4' : 'liter'}
     return Dlf(header, units, body)
 
 
 @pytest.fixture
 def annual_dlf4():
+    '''A dlf with 4 random variables logged once every year for 10 years'''
     header = {}
     body = pd.DataFrame({
         'year' : list(range(1990, 2000)),
@@ -53,11 +58,14 @@ def annual_dlf4():
         'm3' : [117.07, 107.59, 124.78, 105.62, 109.47, 114.51, 103.89, 115.17, 100.56, 103.93],
         'm4' : [129.36, 67.39, 89.52, 160.24, 87.78, 75.51, 71.29, 104.27, 99.07, 153.83],
     })
-    units = {'m1' : 'mm', 'm2' : 'mm', 'm3' : 'g', 'm4' : 'liter'}
+    units = {'year' : '', 'm1' : 'mm', 'm2' : 'mm', 'm3' : 'g', 'm4' : 'liter'}
     return Dlf(header, units, body)
 
 @pytest.fixture
 def n_annual_dlfs(annual_dlf1, annual_dlf2, annual_dlf3, annual_dlf4):
+    # We need the names of parameters to match names of fixtures so we disable the warning
+    # pylint: disable=redefined-outer-name
+    '''A list of dlf with the same 4 random variables logged once every year for 10 years'''
     return [
         annual_dlf1,
         annual_dlf2,
@@ -68,6 +76,7 @@ def n_annual_dlfs(annual_dlf1, annual_dlf2, annual_dlf3, annual_dlf4):
 
 @pytest.fixture
 def daily_dlf1():
+    '''A dlf with 2 random variables logged once every day for a year'''
     header = {}
     body = pd.DataFrame({
         'year' : [2024, 2024, 2024, 2024, 2024, 2024, 2024, 2024, 2024, 2024, 2024, 2024, 2024,
