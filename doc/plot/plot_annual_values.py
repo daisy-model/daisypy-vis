@@ -9,7 +9,7 @@ from daisy_vis.plot import plot_annual
 
 
 def main():
-    '''Run as `python <path-to-file>`'''
+    '''Run as `python <path/to/plot_annual_valus.py>`'''
     dirname = os.path.dirname(os.path.realpath(sys.argv[0]))
     datadir = os.path.join(dirname, '..', '..', 'test-data', 'annual')
     annual_field_nitrogen(datadir)

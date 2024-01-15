@@ -9,7 +9,7 @@ from daisy_vis.plot import plot_daily
 
 
 def main():
-    '''Run as `python <path-to-file>`'''
+    '''Run as `python <path/to/plot_daily_values.py>`'''
     dirname = os.path.dirname(os.path.realpath(sys.argv[0]))
     datadir = os.path.join(dirname, '..', '..', 'test-data', 'hourly')
     
