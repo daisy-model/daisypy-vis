@@ -11,3 +11,7 @@ def only_header_path():
 @pytest.fixture
 def empty_file_path():
     return 'test-data/empty-file.dlf'
+
+@pytest.fixture
+def base_error_dir():
+    return 'test-data/results'
