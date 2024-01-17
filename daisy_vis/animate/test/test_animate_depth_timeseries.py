@@ -4,7 +4,7 @@ import pytest
 from daisy_vis.animate import animate_depth_timeseries
 from daisy_vis.test_helpers import compare_image_files, save_animation
 
-def render_and_compare_animation(fig, out_dir, ref_dir, error_dir):
+def render_and_compare_animation(fig, out_dir, ref_dir, error_dir, rms_tolerance=2):
     '''Save animated timeseries as a series of png files and compare with an existing reference'''
     actual_files = save_animation(fig, out_dir)
     ref_files = { entry.name for entry in os.scandir(ref_dir) if entry.is_file() }
@@ -12,7 +12,8 @@ def render_and_compare_animation(fig, out_dir, ref_dir, error_dir):
     match, mismatch, error = compare_image_files(out_dir,
                                                  ref_dir,
                                                  ref_files,
-                                                 error_dir)
+                                                 error_dir,
+                                                 rms_tolerance=rms_tolerance)
     assert len(error) == 0
     assert len(mismatch) == 0
     assert len(match) == len(ref_files)
@@ -30,7 +31,7 @@ def test_png_rendering_is_the_same(depth_timeseries, base_out_dir, baseline_dir,
                              'animate_depth_timeseries',
                              'png_rendering_is_the_same')
     fig = animate_depth_timeseries('q', depth_timeseries)
-    render_and_compare_animation(fig, out_dir, ref_dir, error_dir, rms_threshold=2.18)
+    render_and_compare_animation(fig, out_dir, ref_dir, error_dir, rms_tolerance=2.18)
 
 @pytest.mark.filterwarnings(r'ignore:setDaemon\(\) is deprecated, set the daemon attribute instead')
 def test_png_rendering_is_the_same_with_params(depth_timeseries,
