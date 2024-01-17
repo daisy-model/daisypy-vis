@@ -55,9 +55,7 @@ def compare_image_files(dir1, dir2, filenames, error_dir, copy_on_error=True, rm
                 match.append(fname)
             else:
                 mismatch.append(fname)
-                print('mismatch', fname)
         except: #pylint: disable=bare-except; We dont care which error, only that it is an error
-            print('error', fname)
             error.append(fname)
 
     if copy_on_error and (len(match) != len(filenames) or len(mismatch) == 0 or len(error) == 0):

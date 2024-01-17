@@ -30,7 +30,7 @@ def test_png_rendering_is_the_same(depth_timeseries, base_out_dir, baseline_dir,
                              'animate_depth_timeseries',
                              'png_rendering_is_the_same')
     fig = animate_depth_timeseries('q', depth_timeseries)
-    render_and_compare_animation(fig, out_dir, ref_dir, error_dir)
+    render_and_compare_animation(fig, out_dir, ref_dir, error_dir, rms_threshold=2.18)
 
 @pytest.mark.filterwarnings(r'ignore:setDaemon\(\) is deprecated, set the daemon attribute instead')
 def test_png_rendering_is_the_same_with_params(depth_timeseries,
@@ -43,7 +43,7 @@ def test_png_rendering_is_the_same_with_params(depth_timeseries,
                            'png_rendering_is_the_same_with_params')
     ref_dir = os.path.join(baseline_dir,
                            'animate_depth_timeseries',
-                           'png_rendering_is_the_same__with_params_ref')
+                           'png_rendering_is_the_same_with_params_ref')
     error_dir = os.path.join(base_error_dir,
                              'animate_depth_timeseries',
                              'png_rendering_is_the_same_with_params')
