@@ -15,3 +15,11 @@ def empty_file_path():
 @pytest.fixture
 def base_error_dir():
     return 'test-data/results'
+
+@pytest.fixture
+def baseline_dir():
+    return 'test-data/baseline'
+
+@pytest.fixture
+def base_out_dir():
+    return 'test-data/tmp'
