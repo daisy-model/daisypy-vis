@@ -12,4 +12,4 @@
 ## Animation
 Requires plotly and dash (for running outside a notebook)
 
-  * [Annimate depth dependent time series](animate/animate_depth_dependent.py). Also available as a [jupyter notebook](animate/animate_depth_dependent.py)
+  * [Annimate depth dependent time series](animate/animate_depth_dependent.py). Also available as a [jupyter notebook](animate/animate_depth_dependent.py) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/daisy-model/daisy-vis/main?labpath=doc%2Fanimate%2Fanimate_depth_dependent.ipynb)
