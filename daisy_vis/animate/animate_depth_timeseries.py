@@ -7,7 +7,7 @@ __all__ = [
 ]
 
 def animate_depth_timeseries(var_name, dlf, *,
-                             figsize=(1000,1000),
+                             figsize=None,
                              title=None,
                              var_lim=None,
                              depth_lim=None
