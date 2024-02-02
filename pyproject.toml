@@ -22,7 +22,8 @@ addopts = [
 ]
 filterwarnings = [
     "error",
-    'ignore:\sPyarrow will become a required dependency of pandas:DeprecationWarning'
+    'ignore:\sPyarrow will become a required dependency of pandas:DeprecationWarning',
+    'ignore:np.find_common_type is deprecated:DeprecationWarning'
 ]
 
 [tool.coverage.run]
