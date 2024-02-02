@@ -2,19 +2,23 @@
 # It seems pointless with docstrings on these functions, so we just disable the warnings
 # pylint: disable=missing-function-docstring
 import pytest
+import matplotlib.pyplot as plt
 from daisy_vis.plot import bar
 
 def test_bar_no_dlf():
     with pytest.raises(ValueError):
         bar('year', 'm1', [])
+    plt.close('all')
 
 def test_bar_dlf_dict_names_given(annual_dlf1):
     with pytest.warns(UserWarning):
         bar('year', 'm1', {'d1' : annual_dlf1}, dlf_names=['d2'])
+    plt.close('all')
 
 def test_bar_wrong_len_dlf_names(annual_dlf1):
     with pytest.raises(ValueError):
         bar('year', 'm1', annual_dlf1, dlf_names=['d1', 'd2'])
+    plt.close('all')
         
 @pytest.mark.mpl_image_compare(style="default", savefig_kwargs={'bbox_inches' : 'tight'})
 def test_bar_single_var_single_dlf(annual_dlf1):
