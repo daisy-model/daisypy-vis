@@ -17,7 +17,7 @@ On linux
 ## Testing
 See `pyproject.toml`for configuration. To install test dependencies
 
-    pip install -e .[test]
+    pip install ".[test]"
 
 To run tests
 
@@ -36,7 +36,6 @@ and compare manually.
 ### Coverage
 See `pyproject.toml`for configuration. To generate coverage report
 
-    pip install coverage
     coverage run
     
 To inspect coverage report
@@ -46,7 +45,7 @@ To inspect coverage report
 ## Development
 Install package as editable
 
-    pip install -e .
+    pip install -e ".[all]"
 
 ### pylint
 Use `pyproject.toml` for package-wide settings, e.g. `ignore-trailing-whitespace`.
