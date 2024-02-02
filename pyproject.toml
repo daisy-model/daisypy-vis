@@ -21,7 +21,8 @@ addopts = [
     #"--mpl-generate-path=test-data/baseline/matplotlib-3.8.2"
 ]
 filterwarnings = [
-    "error"
+    "error",
+    'ignore:\sPyarrow will become a required dependency of pandas:DeprecationWarning'
 ]
 
 [tool.coverage.run]
