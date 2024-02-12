@@ -1,7 +1,7 @@
 '''Functions for plotting daily logged variables'''
 import pandas as pd
-from daisy_vis.io import dlf
-from daisy_vis.plot import points_and_lines
+from daisypy.vis.io import dlf
+from daisypy.vis.plot import points_and_lines
 
 __all__ = [
     'plot_daily',

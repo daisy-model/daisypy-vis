@@ -1,5 +1,5 @@
 '''Test daisy_time_to_timestamp'''
-from daisy_vis.transform import daisy_time_to_timestamp
+from daisypy.vis.transform import daisy_time_to_timestamp
 
 def test_no_rows_are_dropped_correct(timeseries_multiple_time_vars):
     # pylint: disable=missing-function-docstring

@@ -1,7 +1,7 @@
 '''Data for plot tests'''
 import pytest
 import pandas as pd
-from daisy_vis.io.dlf import Dlf
+from daisypy.vis.io.dlf import Dlf
 
 @pytest.fixture
 def annual_dlf1():

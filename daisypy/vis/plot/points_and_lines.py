@@ -1,6 +1,6 @@
 '''Plot variables from daisy_vis.io.dlf.Dlf using points and lines'''
 import matplotlib as mpl
-from daisy_vis.plot.base_plotter import plot_many, plot_many_docstring
+from daisypy.vis.plot.base_plotter import plot_many, plot_many_docstring
 
 __all__ = [
     'points_and_lines'

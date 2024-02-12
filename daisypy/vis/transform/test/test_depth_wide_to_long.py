@@ -1,6 +1,6 @@
 '''Test depth_wide_to_long'''
 import pytest
-from daisy_vis.transform import depth_wide_to_long
+from daisypy.vis.transform import depth_wide_to_long
 
 def test_single_time_var(timeseries_single_time_var):
     '''Test that we can work a single time variable'''

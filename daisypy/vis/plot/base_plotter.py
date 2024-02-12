@@ -7,7 +7,7 @@ signature
 import math
 import warnings
 import matplotlib.pyplot as plt
-from daisy_vis.io import Dlf
+from daisypy.vis.io import Dlf
 
 __all__ = [
     'plot_many'

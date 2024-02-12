@@ -1,6 +1,6 @@
 '''Test data for tests in the amimate module'''
 import pytest
-from daisy_vis.io.dlf import read_dlf
+from daisypy.vis.io.dlf import read_dlf
 
 @pytest.fixture
 def depth_timeseries():

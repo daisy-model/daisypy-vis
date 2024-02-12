@@ -1,7 +1,7 @@
 '''Test points and lines plot'''
 import matplotlib as mpl
 import pytest
-from daisy_vis.plot import points_and_lines
+from daisypy.vis.plot import points_and_lines
 
        
 @pytest.mark.mpl_image_compare(style="default", savefig_kwargs={'bbox_inches' : 'tight'})

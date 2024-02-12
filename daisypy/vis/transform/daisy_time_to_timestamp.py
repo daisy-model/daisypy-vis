@@ -1,6 +1,6 @@
 # pylint: disable=missing-module-docstring
 import pandas as pd
-from daisy_vis.io.dlf import Dlf
+from daisypy.vis.io.dlf import Dlf
 
 __all__ = [
     'daisy_time_to_timestamp'

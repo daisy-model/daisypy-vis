@@ -1,6 +1,6 @@
 '''Plot variables from daisy_vis.io.dlf.Dlf in a bar plot'''
 # pylint: disable=disallowed-name; 'bar' is a valid name in this context
-from daisy_vis.plot.base_plotter import plot_many, plot_many_docstring
+from daisypy.vis.plot.base_plotter import plot_many, plot_many_docstring
 
 __all__ = [
     'bar'

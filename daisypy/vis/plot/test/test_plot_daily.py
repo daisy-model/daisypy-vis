@@ -1,6 +1,6 @@
 '''Test plot_daily'''
 import pytest
-from daisy_vis.plot import plot_daily
+from daisypy.vis.plot import plot_daily
 
 @pytest.mark.mpl_image_compare(style="default", savefig_kwargs={'bbox_inches' : 'tight'})
 def test_plot_daily(daily_dlf1):

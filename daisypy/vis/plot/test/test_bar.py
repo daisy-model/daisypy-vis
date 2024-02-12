@@ -3,7 +3,7 @@
 # pylint: disable=missing-function-docstring
 import pytest
 import matplotlib.pyplot as plt
-from daisy_vis.plot import bar
+from daisypy.vis.plot import bar
 
 def test_bar_no_dlf():
     with pytest.raises(ValueError):

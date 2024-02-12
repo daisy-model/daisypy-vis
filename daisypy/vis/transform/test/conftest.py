@@ -1,7 +1,7 @@
 '''Test data for tests in the transform module'''
 import pytest
-from daisy_vis.io.dlf import read_dlf
-from daisy_vis.transform import daisy_time_to_timestamp
+from daisypy.vis.io.dlf import read_dlf
+from daisypy.vis.transform import daisy_time_to_timestamp
 
 @pytest.fixture
 def timeseries_single_time_var():

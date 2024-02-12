@@ -1,5 +1,5 @@
 '''Test dlf module'''
-from daisy_vis.io.dlf import read_dlf
+from daisypy.vis.io.dlf import read_dlf
 
 def test_read_dlf(dlf_path):
     '''Test that we can correctly read a dlf file'''

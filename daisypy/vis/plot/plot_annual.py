@@ -1,5 +1,5 @@
 '''Functions for plotting annually logged variables'''
-from daisy_vis.plot import bar
+from daisypy.vis.plot import bar
 
 __all__ = [
     'plot_annual',

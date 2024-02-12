@@ -1,6 +1,6 @@
 # pylint: disable=missing-module-docstring
 import plotly.express as px
-from daisy_vis.transform import daisy_time_to_timestamp, depth_wide_to_long
+from daisypy.vis.transform import daisy_time_to_timestamp, depth_wide_to_long
 
 __all__ = [
     'animate_depth_timeseries'

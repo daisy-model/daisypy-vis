@@ -1,7 +1,7 @@
 '''Test compare_images'''
 #pylint: disable=missing-function-docstring
 import os
-from daisy_vis.test_helpers import compare_image_files
+from daisypy.vis.test_helpers import compare_image_files
 
 def test_non_existing_dirs(base_error_dir):
     match, mismatch, error = compare_image_files(

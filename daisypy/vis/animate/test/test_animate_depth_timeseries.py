@@ -1,8 +1,8 @@
 '''Test animate_depth_timeseries'''
 import os
 import pytest
-from daisy_vis.animate import animate_depth_timeseries
-from daisy_vis.test_helpers import compare_image_files, save_animation
+from daisypy.vis.animate import animate_depth_timeseries
+from daisypy.vis.test_helpers import compare_image_files, save_animation
 
 def render_and_compare_animation(fig, out_dir, ref_dir, error_dir, rms_tolerance=2):
     '''Save animated timeseries as a series of png files and compare with an existing reference'''
