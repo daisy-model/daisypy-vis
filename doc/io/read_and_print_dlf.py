@@ -5,7 +5,7 @@ body
 '''
 import os
 import sys
-from daisy_vis import read_dlf
+from daisypy.vis import read_dlf
 
 def main():
     '''Run as `python <path/to/read_and_print.dlf>`'''

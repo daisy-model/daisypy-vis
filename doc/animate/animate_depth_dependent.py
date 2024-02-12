@@ -2,7 +2,7 @@
 import os
 import sys
 from dash import Dash, dcc, html
-import daisy_vis as dv
+import daisypy.vis as dv
 
 def main():
     '''Run as `python <path/to/animate_depth_dependent.py>`'''

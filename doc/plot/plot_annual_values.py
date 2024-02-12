@@ -4,7 +4,7 @@ See the scenarios in test-data/annual
 import os
 import sys
 import matplotlib.pyplot as plt
-import daisy_vis as dv
+import daisypy.vis as dv
 
 
 def main():
