@@ -17,7 +17,8 @@ def render_and_compare_animation(fig, out_dir, ref_dir, error_dir, rms_tolerance
 
     actual_files = save_animation(fig, out_dir)
     ref_files = { entry.name for entry in os.scandir(ref_dir) if entry.is_file() }
-    assert actual_files <= ref_files <= actual_files
+    assert actual_files <= ref_files
+    assert ref_files <= actual_files
     match, mismatch, error = compare_image_files(out_dir,
                                                  ref_dir,
                                                  ref_files,
