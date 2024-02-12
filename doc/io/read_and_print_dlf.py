@@ -8,7 +8,7 @@ import sys
 from daisy_vis.io import dlf
 
 def main():
-    '''Run as `python <path-to-file>`'''
+    '''Run as `python <path/to/read_and_print.dlf>`'''
     dirname = os.path.dirname(os.path.realpath(sys.argv[0]))
     path = os.path.join(
         dirname, '..', '..', 'test-data', 'daily', 'DailyP', 'DailyP-Daily-WaterFlux.dlf'
