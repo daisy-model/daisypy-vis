@@ -21,7 +21,8 @@ dependencies = [
     "plotly",
     "dash"
  ]
-dynamic = ["readme", "version"]
+version = "0.3.0"
+dynamic = ["readme"]#, "version"]
 
 [project.urls]
 Homepage = "https://daisy.ku.dk/"
@@ -66,7 +67,7 @@ disable = [
  ]
 
 [tool.pytest.ini_options]
-testpaths = [ "daisy" ]
+testpaths = [ "daisypy" ]
 addopts = [
     "--mpl", 
     "--mpl-baseline-path=test-data/baseline/matplotlib-3.8.2",
