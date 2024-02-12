@@ -6,7 +6,7 @@ __all__ = [
     'points_and_lines'
 ]
 
-def points_and_lines(x_var, y_vars, dlfs, *,
+def points_and_lines(dlfs, x_var, y_vars, *,
             dlf_names=None,
             figsize=None,
             title=None,
@@ -40,9 +40,9 @@ def points_and_lines(x_var, y_vars, dlfs, *,
             )
         ax.legend(handles=handles)
     # pylint: disable=duplicate-code
-    return plot_many(x_var,
+    return plot_many(dlfs,
+                     x_var,
                      y_vars,
-                     dlfs,
                      plotter,
                      dlf_names=dlf_names,
                      figsize=figsize,

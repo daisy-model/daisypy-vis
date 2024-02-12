@@ -36,7 +36,7 @@ def plot_annual(dlfs, variables, *, dlf_names=None, figsize=None, title=None):
     fig : matplotlib.figure.Figure
     ax : matplotlib.axes.Axes or numpy.ndarray of matplotlib.axes.Axes
     '''
-    return bar('year', variables, dlfs,
+    return bar(dlfs, 'year', variables,
                dlf_names=dlf_names,
                figsize=figsize,
                title=title,

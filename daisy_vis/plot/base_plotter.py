@@ -29,15 +29,15 @@ def plot_many_docstring(name=None):
     
     Parameters
     ----------
+    dlfs : Dlf OR sequence of Dlf or dict of Dlf
+      Dlf object containing the data to plot
+
     x_var : str
       Variable to use as x variable
 
     y_vars : str of sequence of str
       Variable(s) to use as y values. 
     
-    dlfs : Dlf OR sequence of Dlf or dict of Dlf
-      Dlf object containing the data to plot
-
     plotter : callable : (pandas.DataFrame, x_var, ax) -> ()
       Function that plots a dataframe on a given axes
 
@@ -64,7 +64,7 @@ def plot_many_docstring(name=None):
     axs : matplotlib.axes.Axes or numpy.ndarray of matplotlib.axes.Axes
     '''
 
-def plot_many(x_var, y_vars, dlfs, plotter, *,
+def plot_many(dlfs, x_var, y_vars, plotter, *,
         dlf_names=None,
         figsize=None,
         title=None,
@@ -87,7 +87,7 @@ def plot_many(x_var, y_vars, dlfs, plotter, *,
         squeeze=False
     )
     for n, y_var in enumerate(y_vars):
-        plot_single(x_var, y_var, dlfs, plotter, axs[n//cols,n%cols], dlf_names=dlf_names)
+        plot_single(dlfs, x_var, y_var, plotter, axs[n//cols,n%cols], dlf_names=dlf_names)
     if title is not None:
         plt.suptitle(title)
     if not sharex:
@@ -97,7 +97,7 @@ def plot_many(x_var, y_vars, dlfs, plotter, *,
 plot_many.__doc__ = plot_many_docstring()
 
 
-def plot_single(x_var, y_var, dlfs, plotter, ax, *, dlf_names=None):
+def plot_single(dlfs, x_var, y_var, plotter, ax, *, dlf_names=None):
     # pylint: disable=too-many-arguments
     '''Plot a single dlf variable
 
@@ -105,14 +105,14 @@ def plot_single(x_var, y_var, dlfs, plotter, ax, *, dlf_names=None):
     
     Parameters
     ----------
+    dlfs : Dlf OR sequence of Dlf or dict of Dlf
+      Dlf object containing the data to plot
+
     x_var : str
       Variable to use as x variable
 
     y_var : str 
       Variable to use as y values. 
-    
-    dlfs : Dlf OR sequence of Dlf or dict of Dlf
-      Dlf object containing the data to plot
 
     plotter : callable : (pandas.DataFrame, x_var, ax) -> ()
       Function that plots a dataframe on a given axes

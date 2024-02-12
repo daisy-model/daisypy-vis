@@ -6,7 +6,7 @@ __all__ = [
     'animate_depth_timeseries'
 ]
 
-def animate_depth_timeseries(var_name, dlf, *,
+def animate_depth_timeseries(dlf, var_name, *,
                              figsize=None,
                              title=None,
                              var_lim=None,
@@ -16,9 +16,9 @@ def animate_depth_timeseries(var_name, dlf, *,
     '''
     Parameters
     ----------
-    var_name : str
-
     dlf : daisy_vis.io.dlf.Dlf
+
+    var_name : str
 
     figsize : tuple of int, optional
       (width, height) of figure in pixels

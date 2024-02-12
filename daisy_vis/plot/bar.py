@@ -6,7 +6,7 @@ __all__ = [
     'bar'
 ]
 
-def bar(x_var, y_vars, dlfs, *,
+def bar(dlfs, x_var, y_vars, *,
         dlf_names=None,
         figsize=None,
         title=None,
@@ -17,9 +17,9 @@ def bar(x_var, y_vars, dlfs, *,
     def plotter(df, x_var, ax):
         df.plot.bar(x=x_var, ax=ax)
     # pylint: disable=duplicate-code        
-    return plot_many(x_var,
+    return plot_many(dlfs,
+                     x_var,
                      y_vars,
-                     dlfs,
                      plotter,
                      dlf_names=dlf_names,
                      figsize=figsize,

@@ -43,7 +43,7 @@ def test_png_rendering_is_the_same(depth_timeseries, base_out_dir, baseline_dir,
     error_dir = os.path.join(base_error_dir,
                              'animate_depth_timeseries',
                              'png_rendering_is_the_same')
-    fig = animate_depth_timeseries('q', depth_timeseries)
+    fig = animate_depth_timeseries(depth_timeseries, 'q')
     render_and_compare_animation(fig, out_dir, ref_dir, error_dir, rms_tolerance=2.18)
 
 # From kaleido
@@ -64,8 +64,8 @@ def test_png_rendering_is_the_same_with_params(depth_timeseries,
     error_dir = os.path.join(base_error_dir,
                              'animate_depth_timeseries',
                              'png_rendering_is_the_same_with_params')
-    fig = animate_depth_timeseries('q',
-                                   depth_timeseries,
+    fig = animate_depth_timeseries(depth_timeseries,
+                                   'q',
                                    figsize=(200,200),
                                    var_lim=(-1,-1),
                                    depth_lim=(-100,-5))

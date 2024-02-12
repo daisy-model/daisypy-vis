@@ -60,7 +60,7 @@ def plot_daily(dlfs, variables, *,
     else:
         dlfs = [prepare_dlf(dlf_, hour) for dlf_ in dlfs]
     linestyles = ['-'] if plot_line else None
-    fig, axs = points_and_lines(COL_NAME_FOR_PLOT, variables, dlfs,
+    fig, axs = points_and_lines(dlfs, COL_NAME_FOR_PLOT, variables,
                                 dlf_names=dlf_names,
                                 figsize=figsize,
                                 title=title,

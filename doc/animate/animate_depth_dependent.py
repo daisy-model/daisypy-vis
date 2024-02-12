@@ -13,7 +13,7 @@ def main():
     )
     dlf = read_dlf(path)
     var_name = 'q'
-    fig = animate_depth_timeseries(var_name, dlf)
+    fig = animate_depth_timeseries(dlf, var_name)
     
     app = Dash(__name__)
     app.layout = html.Div(children=[
