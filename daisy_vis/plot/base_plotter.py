@@ -1,12 +1,16 @@
-'''Plot variables from daisy_vis.io.dlf.Dlf in a line plot'''
+'''Plot variables from daisy_vis.io.dlf.Dlf using a supplied plotter function with the following
+signature
+
+  plotter : (pandas.DataFrame, x_var, ax) -> ()
+
+'''
 import math
 import warnings
 import matplotlib.pyplot as plt
-from daisy_vis.io import dlf
+from daisy_vis.io import Dlf
 
 __all__ = [
-    'plot_many',
-    'plot_many_docstring',
+    'plot_many'
 ]
 
 def plot_many_docstring(name=None):
@@ -129,7 +133,7 @@ def plot_single(dlfs, x_var, y_var, plotter, ax, *, dlf_names=None):
     -------
     ax : matplotlib.axes.Axes
     '''    
-    if isinstance(dlfs, dlf.Dlf):
+    if isinstance(dlfs, Dlf):
         dlfs = [dlfs]
         
     if len(dlfs) == 0:
