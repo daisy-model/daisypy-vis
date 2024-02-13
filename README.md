@@ -10,7 +10,7 @@ See [doc](https://github.com/daisy-model/daisy-vis/tree/main/doc) for examples.
 ## Installation
 The visualization tools are available from pypi
 
-    pip install daisy-vis
+    pip install daisypy-vis
 
 ## Development
 Install package as editable
@@ -20,7 +20,7 @@ Install package as editable
 ### pylint
 Use `pyproject.toml` for package-wide settings, e.g. `ignore-trailing-whitespace`.
 
-	pylint daisy_vis
+	pylint daisypy/vis
     pylint doc
 
 
