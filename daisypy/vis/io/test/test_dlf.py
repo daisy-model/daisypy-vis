@@ -12,7 +12,9 @@ def test_read_dlf(dlf_path):
 def test_read_dlf_only_header_present(only_header_path):
     '''Test that we can correctly read a file without a body'''
     only_header = read_dlf(only_header_path)
-    assert len(only_header.header) > 0
+    assert len(only_header.header) == 8
+    assert isinstance(only_header.header['LOG'], list)
+    assert len(only_header.header['LOG']) == 3
     assert len(only_header.units) == 0
     assert len(only_header.body) == 0
 

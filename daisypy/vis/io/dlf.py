@@ -39,7 +39,13 @@ def read_dlf(path):
                     sep_idx = row.find(':')
                     k = row[:sep_idx].strip()
                     v = row[(sep_idx+1):].strip()
-                    header[k] = v
+                    if k in header:
+                        if isinstance(header[k], list):
+                            header[k].append(v)
+                        else:
+                            header[k] = [header[k], v]
+                    else:
+                        header[k] = v
         try:
             csv_header = next(infile).strip('\n').split('\t')
             units = dict(zip(csv_header, next(infile).strip('\n').split('\t')))
