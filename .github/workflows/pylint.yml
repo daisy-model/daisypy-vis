@@ -20,5 +20,5 @@ jobs:
         pip install -e .[lint]
     - name: Analysing the code with pylint
       run: |
-        pylint daisy_vis
+        pylint daisypy/vis
         pylint doc

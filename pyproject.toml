@@ -1,9 +1,64 @@
 [build-system]
 requires = [
-    "setuptools",
-    "wheel"
+    "setuptools"
 ]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "daisypy-vis"
+authors = [
+  { name="Silas Nyboe Ørting", email="silas@di.ku.dk" },
+]
+description = "Visualization module for Daisy log files (dlf)"
+requires-python = ">=3.11"
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3"
+]
+dependencies = [
+    "pandas",
+    "matplotlib",
+    "plotly",
+    "dash"
+ ]
+version = "0.3.0"
+dynamic = ["readme"]#, "version"]
+
+[project.urls]
+Homepage = "https://daisy.ku.dk/"
+Repository = "https://github.com/daisy-model/daisy-vis"
+Issues = "https://github.com/daisy-model/daisy-vis/issues"
+
+[project.optional-dependencies]
+test =[
+     "coverage",
+     "pytest",
+     "pytest-mpl",
+     "kaleido",
+     "pillow"
+]
+lint = [
+     "pylint",
+     "pytest",
+     "pillow"
+]
+all = [
+    "coverage",
+    "pytest",
+    "pytest-mpl",
+    "kaleido",
+    "pillow",
+    "pylint"
+]
+
+[tool.setuptools.dynamic]
+#version = { attr = "daisypy.vis.__version__" }
+readme = { file = "README.md" }
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["daisypy"]
+namespaces = true
 
 [tool.pylint.messages_control] 
 disable = [
@@ -12,7 +67,7 @@ disable = [
  ]
 
 [tool.pytest.ini_options]
-testpaths = [ "daisy_vis" ]
+testpaths = [ "daisypy" ]
 addopts = [
     "--mpl", 
     "--mpl-baseline-path=test-data/baseline/matplotlib-3.8.2",

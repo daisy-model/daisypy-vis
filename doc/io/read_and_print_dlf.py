@@ -5,7 +5,7 @@ body
 '''
 import os
 import sys
-from daisy_vis.io import dlf
+from daisypy.vis import read_dlf
 
 def main():
     '''Run as `python <path/to/read_and_print.dlf>`'''
@@ -13,7 +13,7 @@ def main():
     path = os.path.join(
         dirname, '..', '..', 'test-data', 'daily', 'DailyP', 'DailyP-Daily-WaterFlux.dlf'
     )
-    soil_tracer = dlf.read_dlf(path)
+    soil_tracer = read_dlf(path)
     for k,v in soil_tracer.header.items():
         print(f'{k} : {v}')
     print('--------------------')

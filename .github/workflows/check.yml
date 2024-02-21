@@ -1,0 +1,15 @@
+name: check
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Check version
+      run: |
+        grep -oP '^version = "\K[0-9]+\.[0-9]+\.[0-9]+' pyproject.toml > version_pyproject.toml
+        grep -oP '^__version__ = "\K[0-9]+\.[0-9]+\.[0-9]+' daisypy/vis/__init__.py > version___init__.py
+        diff version_pyproject.toml version___init__.py -q
+        exit $?

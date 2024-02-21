@@ -4,8 +4,7 @@ See the scenarios in test-data/annual
 import os
 import sys
 import matplotlib.pyplot as plt
-from daisy_vis.io import dlf
-from daisy_vis.plot import plot_annual
+import daisypy.vis as dv
 
 
 def main():
@@ -24,7 +23,7 @@ def annual_field_nitrogen(datadir):
     Biopore-Leaching is not included as it is zero in all scenarios.
     '''
     dlfs = [
-        dlf.read_dlf(p) for p in [
+        dv.read_dlf(p) for p in [
             os.path.join(datadir, 'Annual-FN/HourlyP-Annual-FN-2.2b.dlf'),
             os.path.join(datadir, 'Annual-FN/HourlyP-Annual-FN-2.3b.dlf'),
             os.path.join(datadir, 'Annual-FN/HourlyP-Annual-FN-2.4b.dlf'),
@@ -39,7 +38,7 @@ def annual_field_nitrogen(datadir):
         'Soil-Drain',
         'Surface-Loss'
     ]
-    plot_annual(dlfs, variables, dlf_names=dlf_names, title='Annual Field Nitrogen')
+    dv.plot_annual(dlfs, variables, dlf_names=dlf_names, title='Annual Field Nitrogen')
     plt.show()
 
 
@@ -51,7 +50,7 @@ def annual_tracer(datadir):
     Leak biopores is not included as it is zero in all scenarios.
     '''
     dlfs = [
-        dlf.read_dlf(p) for p in [
+        dv.read_dlf(p) for p in [
             os.path.join(datadir, 'Annual-Tracer/HourlyP-Annual-Tracer-2.2b.dlf'),
             os.path.join(datadir, 'Annual-Tracer/HourlyP-Annual-Tracer-2.3b.dlf'),
             os.path.join(datadir, 'Annual-Tracer/HourlyP-Annual-Tracer-2.4b.dlf'),
@@ -66,7 +65,7 @@ def annual_tracer(datadir):
         'Runoff'
     ]
     dlf_names = ['2.2b', '2.3b', '2.4b', '2.5b']
-    plot_annual(dlfs, variables, dlf_names=dlf_names, title='Annual Tracer')
+    dv.plot_annual(dlfs, variables, dlf_names=dlf_names, title='Annual Tracer')
     plt.show()
     
 

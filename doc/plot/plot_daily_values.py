@@ -4,9 +4,7 @@ See the scenarios in test-data/daily
 import os
 import sys
 import matplotlib.pyplot as plt
-from daisy_vis.io import dlf
-from daisy_vis.plot import plot_daily
-
+import daisypy.vis as dv
 
 def main():
     '''Run as `python <path/to/plot_daily_values.py>`'''
@@ -18,9 +16,8 @@ def main():
 def daily_soil_chemical(datadir):
     '''Scatter plot of daily soil chemical for a single scenario
     '''
-    hour = 12
     dlfs = {
-        'P2D' : dlf.read_dlf(os.path.join(datadir, 'P2D-Daily-Soil Chemical_110cm.dlf'))
+        'P2D' : dv.io.read_dlf(os.path.join(datadir, 'P2D-Daily-Soil Chemical_110cm.dlf'))
     }
     variables = [
         'Leak-Matrix',
@@ -28,9 +25,10 @@ def daily_soil_chemical(datadir):
         'Uptake',
         'Transform'
     ]
-    plot_daily(dlfs, variables, hour=hour, title=f'Soil chemical @ hour {hour}', plot_line=True)
+    hour = 12
+    dv.plot_daily(dlfs, variables, hour=hour, title=f'Soil chemical @ hour {hour}', plot_line=True)
     hour = 0
-    plot_daily(dlfs, variables, hour=hour, title=f'Soil chemical @ hour {hour}')
+    dv.plot_daily(dlfs, variables, hour=hour, title=f'Soil chemical @ hour {hour}')
     plt.show()    
 
 if __name__ == '__main__':
