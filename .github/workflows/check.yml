@@ -11,5 +11,5 @@ jobs:
       run: |
         grep -oP '^version = "\K[0-9]+\.[0-9]+\.[0-9]+' pyproject.toml > version_pyproject.toml
         grep -oP '^__version__ = "\K[0-9]+\.[0-9]+\.[0-9]+' daisypy/vis/__init__.py > version___init__.py
-        diff version_pyproject.toml pyproject.toml -q
+        diff version_pyproject.toml version___init__.py -q
         exit $?
