@@ -1,8 +1,8 @@
-[![pytest](https://github.com/daisy-model/daisy-vis/actions/workflows/pytest.yml/badge.svg)](https://github.com/daisy-model/daisy-vis/actions/workflows/pytest.yml)
-[![Pylint](https://github.com/daisy-model/daisy-vis/actions/workflows/pylint.yml/badge.svg)](https://github.com/daisy-model/daisy-vis/actions/workflows/pylint.yml)
-[![codecov](https://codecov.io/gh/daisy-model/daisy-vis/graph/badge.svg?token=F8625GT0A8)](https://codecov.io/gh/daisy-model/daisy-vis)
+[![pytest](https://github.com/daisy-model/daisypy-vis/actions/workflows/pytest.yml/badge.svg)](https://github.com/daisy-model/daisypy-vis/actions/workflows/pytest.yml)
+[![Pylint](https://github.com/daisy-model/daisypy-vis/actions/workflows/pylint.yml/badge.svg)](https://github.com/daisy-model/daisypy-vis/actions/workflows/pylint.yml)
+[![codecov](https://codecov.io/gh/daisy-model/daisypy-vis/graph/badge.svg?token=F8625GT0A8)](https://codecov.io/gh/daisy-model/daisypy-vis)
 
-# daisy-vis
+# daisypy-vis
 Visualisation library and tools for Daisy model output
 
 See [doc](https://github.com/daisy-model/daisy-vis/tree/main/doc) for examples.
@@ -13,6 +13,11 @@ The visualization tools are available from pypi
     pip install daisypy-vis
 
 ## Development
+Checkout repository
+
+    git clone git@github.com:daisy-model/daisypy-vis.git
+    cd daisypy-vis
+
 Install package as editable
 
     pip install -e ".[all]"
