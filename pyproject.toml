@@ -22,7 +22,7 @@ dependencies = [
     "dash"
  ]
 version = "0.3.0"
-dynamic = ["readme"]#, "version"]
+readme = "README.md"
 
 [project.urls]
 Homepage = "https://daisy.ku.dk/"
@@ -50,10 +50,6 @@ all = [
     "pillow",
     "pylint"
 ]
-
-[tool.setuptools.dynamic]
-#version = { attr = "daisypy.vis.__version__" }
-readme = { file = "README.md" }
 
 [tool.setuptools.packages.find]
 where = ["."]
