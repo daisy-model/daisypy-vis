@@ -2,7 +2,7 @@
 import os
 import sys
 from dash import Dash, dcc, html
-import daisypy.vis as dv
+import daisypy.vis as dv # pylint: disable=import-error
 
 def main():
     '''Run as `python <path/to/animate_depth_dependent.py>`'''

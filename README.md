@@ -25,7 +25,7 @@ Install package as editable
 ### pylint
 Use `pyproject.toml` for package-wide settings, e.g. `ignore-trailing-whitespace`.
 
-	pylint daisypy/vis
+	pylint daisypy.vis
     pylint doc
 
 

@@ -4,7 +4,7 @@ See the scenarios in test-data/annual
 import os
 import sys
 import matplotlib.pyplot as plt
-import daisypy.vis as dv
+import daisypy.vis as dv # pylint: disable=import-error
 
 
 def main():

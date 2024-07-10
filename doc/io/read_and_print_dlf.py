@@ -5,7 +5,7 @@ body
 '''
 import os
 import sys
-from daisypy.vis import read_dlf
+from daisypy.vis import read_dlf # pylint: disable=import-error
 
 def main():
     '''Run as `python <path/to/read_and_print.dlf>`'''
