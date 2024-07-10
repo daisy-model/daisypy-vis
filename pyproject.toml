@@ -53,8 +53,7 @@ all = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["daisypy"]
-namespaces = true
+include = ["daisypy.*"]
 
 [tool.pylint.messages_control] 
 disable = [
