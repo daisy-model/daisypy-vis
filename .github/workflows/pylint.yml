@@ -9,9 +9,9 @@ jobs:
       matrix:
         python-version: ["3.11"]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
@@ -20,5 +20,5 @@ jobs:
         pip install -e .[lint]
     - name: Analysing the code with pylint
       run: |
-        pylint daisypy/vis
+        pylint daisypy.vis
         pylint doc
